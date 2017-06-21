@@ -6,4 +6,11 @@ function initMap(){
 		zoomControl: false,
 		streetViewControl: false
 	});
+	function buscar(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
+		}
+	}
+	document.getElementById("encuentrame").addEventListener("click",buscar);
+	var latitud,longitud;
 }
