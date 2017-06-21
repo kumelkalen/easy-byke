@@ -13,4 +13,14 @@ function initMap(){
 	}
 	document.getElementById("encuentrame").addEventListener("click",buscar);
 	var latitud,longitud;
+	var funcionExito = function(position){
+		latitud = posicion.coords.latitude;
+		longitud = posicion.coords.longitude;
+
+		var miUbicacion = new google.maps.Marker({
+			position: {lat:latitud, lng:longitud},
+			animation: google.maps.animation.DROP,
+			map: map
+		});
+	}
 }
